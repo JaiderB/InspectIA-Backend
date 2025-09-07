@@ -1,4 +1,4 @@
-package io.inspectia.app.model.Domain.DTO.Entities;
+package io.inspectia.app.model.infra.DTO.Entities;
 
 import io.inspectia.app.model.infra.POJO.Enums.Entites.Severity;
 import lombok.AllArgsConstructor;

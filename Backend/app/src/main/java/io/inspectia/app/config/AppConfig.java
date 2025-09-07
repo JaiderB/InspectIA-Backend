@@ -2,6 +2,7 @@ package io.inspectia.app.config;
 
 import io.inspectia.app.config.Security.Models.JwtUserDetailsService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetailsService;

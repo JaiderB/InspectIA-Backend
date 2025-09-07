@@ -1,0 +1,81 @@
+package io.inspectia.app.service.Analyze.AI;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
+import io.inspectia.app.model.infra.DTO.Entities.Analysis;
+import io.inspectia.app.model.infra.DTO.Entities.User;
+import io.inspectia.app.model.infra.POJO.Enums.AI.PromptsPath;
+import lombok.AllArgsConstructor;
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.messages.UserMessage;
+import org.springframework.ai.chat.model.ChatModel;
+import org.springframework.ai.chat.prompt.Prompt;
+import org.springframework.ai.content.Media;
+import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Component;
+import org.springframework.util.MimeType;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.time.Instant;
+import java.util.*;
+
+@AllArgsConstructor
+@Component("aiAnalyzer")
+public class AiAnalyzer {
+
+    private final ChatClient chatClient;
+    private final Gson gson;
+
+    public Optional<Analysis> makeAnalysis(PromptsPath promptPath, List<MultipartFile> files, User user) throws IOException {
+
+
+        List<Media> mediaResources = files.stream().map(file -> {
+            Resource fileResource = file.getResource();
+            return new Media(MimeType.valueOf(file.getContentType()), fileResource);
+        }).toList();
+
+        UserMessage userMessage = UserMessage.builder()
+                .media(mediaResources)
+                .metadata(getMetadata(user, files))
+                .build();
+
+        Prompt prompt = new Prompt(userMessage);
+        try{
+
+            String chatModelResponse = chatClient.prompt(prompt).call().content();
+
+            JsonObject jsonObject = JsonParser.parseString(chatModelResponse).getAsJsonObject();
+
+            return Optional.ofNullable(gson.fromJson(jsonObject, Analysis.class));
+        }catch (JsonSyntaxException e){
+            return Optional.empty();
+        }
+
+    }
+
+    protected Map<String, Object> getMetadata(User user, List<MultipartFile> files){
+
+
+        Map<String, Object> metadata = new HashMap<>();
+
+        for (MultipartFile file : files) {
+            String correlationId = UUID.randomUUID().toString();
+            Map<String, Object> temporalFileMetadata = new HashMap<>();
+            temporalFileMetadata.put("userId", user.getId());
+            temporalFileMetadata.put("originalFilename", file.getOriginalFilename());
+            temporalFileMetadata.put("fileSize", file.getSize());
+            temporalFileMetadata.put("uploadTimestamp", Instant.now().toString());
+            temporalFileMetadata.put("correlationId", correlationId);
+            metadata.put(correlationId, temporalFileMetadata);
+        }
+
+        return metadata;
+    }
+
+}

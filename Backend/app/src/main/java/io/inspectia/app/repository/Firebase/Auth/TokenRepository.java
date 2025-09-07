@@ -31,7 +31,6 @@ public class TokenRepository {
                 .document(hashId)
                 .get();
 
-        // Lee el documento de forma asincrónica
         DocumentSnapshot document = documentFuture.get();
 
         Token token = null;

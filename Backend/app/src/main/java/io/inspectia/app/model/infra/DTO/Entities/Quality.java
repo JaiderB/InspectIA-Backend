@@ -1,18 +1,13 @@
-package io.inspectia.app.model.Domain.DTO.Entities;
+package io.inspectia.app.model.infra.DTO.Entities;
 
 import io.inspectia.app.model.infra.POJO.Enums.Entites.QualityCategory;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
 public class Quality {
     QualityCategory qualityCategory;
+    Double score;
     List<Defect> defects;
-    Integer Score;
 }

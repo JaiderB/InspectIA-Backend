@@ -12,9 +12,9 @@ public class EmptyValidatorCallback implements ValidatorCallback {
 
     @Override
     public <T, V> V validateAndExecute(T element, V object, BiFunction<T, V, V> action) {
-        if (element != null && !element.toString().isEmpty()) {  // Validación hardcoded de no vacío
+        if (element != null && !element.toString().isEmpty()) {
 
-            return action.apply(element, object);                       // Ejecución de lambda en RAM
+            return action.apply(element, object);
         }
 
         return object;

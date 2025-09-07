@@ -89,7 +89,6 @@ public class AuthService {
             throw new IllegalArgumentException("Invalid Refresh Token");
         }
 
-        cleanUserTokens(user.get());
         final String accessToken = jwtService.generateToken(user.get());
         return new TokenResponse(accessToken, refreshToken);
     }

@@ -21,7 +21,7 @@ public class CallbackValidatorMapBuilder <T, V> implements FirebaseMapBuilder<T,
     private final Map<T, BiFunction<T, V, V>> actions = new HashMap<>();
 
     @Override
-    public CallbackValidatorMapBuilder<T,V> init(V initialMap, ValidatorCallback validatorCallback) {  // Método para inicializar
+    public CallbackValidatorMapBuilder<T,V> init(V initialMap, ValidatorCallback validatorCallback) {
         this.userUpdated = initialMap;
         this.validatorCallback = validatorCallback;
         return this;
@@ -37,8 +37,8 @@ public class CallbackValidatorMapBuilder <T, V> implements FirebaseMapBuilder<T,
     public V build() {
         V temp = userUpdated;
         for (Map.Entry<T, BiFunction<T, V, V>>  entry: actions.entrySet()) {
-            temp = validatorCallback.validateAndExecute(entry.getKey(), temp, entry.getValue());  // Aplica secuencialmente en CPU/RAM
+            temp = validatorCallback.validateAndExecute(entry.getKey(), temp, entry.getValue());
         }
-        return temp;  // Retorna mapa final
+        return temp;
     }
 }

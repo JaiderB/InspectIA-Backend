@@ -19,7 +19,7 @@ import java.util.Objects;
 @Configuration
 public class FirebaseAuth {
 
-    @Value("${firebase.database.service}")
+    @Value("${firebase.database.service-account-path}")
     private String firebaseServiceAccountKey;
 
     public void authenticate() throws IOException {

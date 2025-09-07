@@ -39,7 +39,7 @@ public class UserService {
                     .refreshToken(null)
                     .build();
 
-            return userRepository.save(user); // isPresent()?
+            return userRepository.save(user);
         }else{
             throw new RecordAlreadyExistsException();
         }
