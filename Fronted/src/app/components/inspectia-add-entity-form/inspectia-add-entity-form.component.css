@@ -1,0 +1,130 @@
+
+
+:host{
+  position: absolute;
+  z-index: 1;
+  display: contents;
+  box-sizing: border-box;
+  width: max-content;
+  height: max-content;
+}
+
+.full-zone{
+  display: flex;
+  width: 100%;
+}
+
+.full-zone form{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.back-form{
+  position: absolute;
+  background-color: var(--inspectia-neutral-color-gray-60-25);
+  z-index: 1;
+  overflow: hidden;
+  --chain-border-color: none;
+  width: 100%;
+  height: 100%;
+}
+
+.back-form.open{
+  width: 100%;
+  height: 100%;
+}
+
+.back-form.close{
+  width: 0;
+  height: 0;
+}
+
+.container-form{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--inspectia-neutral-color-white);
+  width: 800px;
+  height: 520px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1.2rem;
+  padding: 1rem 1.7rem;
+}
+
+.container-form.min{
+  height: 450px;
+}
+
+.top-zone{
+  display: flex;
+  height: 13%;
+}
+
+.top-zone app-inspectia-text{
+  text-align: center;
+  flex-basis: 98%;
+  margin-top: 1rem!important;
+  margin-left: 2% !important;
+}
+
+app-close-icon{
+  height: min-content;
+}
+
+.mid-zone{
+  display: flex;
+  height: 67%;
+}
+
+.left-zone{
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-zone{
+  width: 55%;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.right-zone form{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.lower-zone{
+  display: grid;
+  place-content: center;
+  height: 21%;
+
+}
+
+#form-register{
+  width: 90%;
+  height: 90%;
+}
+
+.lower-zone app-inspectia-button{
+  margin-top: 1rem;
+  --height-button-icon: 2.5rem;
+}
+
+img{
+  width: 100%;
+}
+
+.icon-close{
+  align-items: start;
+}
+

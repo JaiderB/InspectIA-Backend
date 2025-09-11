@@ -1,0 +1,160 @@
+@font-face {
+  font-family: "Anek_Malayalam";
+  src: url("assets/Fonts/AnekMalayalam-VariableFont.ttf");
+}
+
+* {
+
+  --inspectia-primary-86: #D1DFE8;
+  --inspectia-primary-73: #A3BFD1;
+  --inspectia-primary-60: #74A0BA;
+  --inspectia-primary-46: #4680A3;
+  --inspectia-primary-33: #18608C;
+  --inspectia-primary-26: #134D70;
+  --inspectia-primary-13: #0A2638;
+  --inspectia-primary-6: #05131C;
+
+  --inspectia-secondary-90: #FCE3CD;
+  --inspectia-secondary-80: #FAC89C;
+  --inspectia-secondary-69: #F7AC6A;
+  --inspectia-secondary-59: #F59139;
+  --inspectia-secondary-49: #F27507;
+  --inspectia-secondary-39: #C25E06;
+  --inspectia-secondary-29: #914604;
+  --inspectia-secondary-20: #612F03;
+  --inspectia-secondary-10: #301701;
+
+  --inspectia-secondary-trans-15: rgba(245, 145, 57, 0.15);
+  --inspectia-semantic-error-trans-15: rgba(224, 82, 82, 0.15);
+  --inspectia-neutral-color-trans-25: rgba(209, 223, 232, 0.25);
+  --inspectia-neutral-color-gray-60-25: rgba(153, 153, 153, 0.20);
+  --inspectia-active-link-color-trans-25: rgba(24, 96, 140, 0.05);
+
+
+
+  --inspectia-primary-shadow: #071E2C;
+
+  --inspectia-semantic-error: rgb(224, 82, 82);
+  --inspectia-semantic-warning: #E9E15E;
+  --inspectia-semantic-warning-soft: #F2F5E0;
+  --inspectia-semantic-success: #A8E04D;
+  --inspectia-semantic-success-39: rgb(115, 169, 30);
+
+  --inspectia-neutral-color-black: #1A1A1A;
+  --inspectia-neutral-color-white: #FFFFFF;
+  --inspectia-neutral-color-blue-61-20: #143B52;
+  --inspectia-neutral-color-blue-51-30: #255674;
+  --inspectia-neutral-color-blue-41-40: #3C7090;
+  --inspectia-neutral-color-blue-31-50: #5889A7;
+  --inspectia-neutral-color-gray-50: #808080;
+  --inspectia-neutral-color-gray-60: #999999;
+  --inspectia-neutral-color-gray-70: #EBEBEB;
+  --inspectia-neutral-color-gray-97: #f7f7f7f8;
+
+
+  --inspectia-loading-background: #9999995e;
+  --inspectia-active-link-color: var(--inspectia-primary-33);
+  --inspectia-disabled-link-color: var(--inspectia-neutral-color-gray-60);
+  --inspectia-title-color-default: var(--inspectia-neutral-color-black);
+  --inspectia-default-text-color: var(--inspectia-neutral-color-gray-50);
+  --inspectia-active-secondary-color: var(--inspectia-secondary-39);
+  font-family: "Anek_Malayalam";
+
+  --p-progressspinner-color-one: var(--inspectia-neutral-color-blue-31-50);
+  --p-progressspinner-color-two: var(--inspectia-neutral-color-blue-51-30);
+  --p-progressspinner-color-three: var(--inspectia-neutral-color-blue-61-20);
+  --p-progressspinner-color-four: var(--inspectia-neutral-color-blue-41-40);
+
+}
+
+
+
+body,
+html {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.XS {
+  width: 8px;
+  height: 8px;
+}
+
+.S {
+  width: 13px;
+  height: 13px;
+}
+
+.M {
+  width: 20px;
+  height: 20px;
+}
+
+.L {
+  width: 27px;
+  height: 27px;
+}
+
+.XL {
+  width: 32px;
+  height: 32px;
+}
+
+.XXL {
+  width: 38px;
+  height: 38px;
+}
+
+.XXXL {
+  width: 65px;
+  height: 65px;
+}
+
+/*Icons*/
+
+:host {
+  display: flex;
+  width: min-content;
+  height: min-content;
+}
+
+svg path {
+  stroke: var(--inspectia-neutral-color-black);
+}
+
+.noneStroke svg path {
+  stroke: none;
+}
+
+svg.active path {
+  stroke: var(--inspectia-secondary-39);
+}
+
+.chain path {
+  stroke: var(--chain-border-color);
+  fill: var(--chain-back-fill-color);
+}
+
+.chain rect {
+  fill: var(--chain-fill-color);
+}
+
+.icon-see .chain rect {
+  fill: var(--chain-back-fill-color)
+}
+
+.icon-see:hover .chain path {
+  fill: var(--inspectia-active-link-color)
+}
+
+.icon-see .chain path {
+  stroke: none;
+  fill: var(--inspectia-disabled-link-color);
+}
+
+.contentOptions:hover .analysis-icon .chain path {
+  fill: var(--inspectia-active-secondary-color)
+}

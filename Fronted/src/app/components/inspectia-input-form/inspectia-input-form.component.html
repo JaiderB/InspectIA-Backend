@@ -1,0 +1,47 @@
+<app-inspectia-text text="{{label}} {{required? '*' : ''}}" typeText="label"
+  labelFor="{{idInput}}"></app-inspectia-text>
+
+
+@switch (type) {
+
+  @case ('select') {
+    <select name="select-input" id="{{idInput}}" required="{{required}}">
+      @for (option of optionsSelect; track option.id) {
+        <option value="{{option.id}}">{{option.name}}</option>
+      }
+    </select>
+  }
+  @case('text') {
+    <input id="{{idInput}}" [ngModel]="value" (ngModelChange)="onInputChange($event)" type="{{checked? 'text': type}}"
+      placeholder="{{placeholder}}" required="required" />
+  }
+  @case('password') {
+    <input id="{{idInput}}" [ngModel]="value" (ngModelChange)="onInputChange($event)" type="{{checked? 'text': type}}"
+      placeholder="{{placeholder}}" required="required" />
+  }@case('files'){
+    <br>
+    <input type="file" #filesInput name="file-selector" class="file-input-hidden" id="{{idInput}}" (change)="onFilesSelected($event)" #realFile [ngModel]="value" (ngModelChange)="onInputChange($event)"
+    required="required"  multiple >
+    <br>
+    <button type="button" class="custom-file-button" (click)="clickRealInput()">
+
+      @if(loadedFiles != null && loadedFiles.length > 0){
+        {{loadedFiles.length}} archivos cargados.
+      }@else{
+        Adjuntar Archivos.
+      }
+
+    </button>
+
+    <span class="file-name-display" id="selected-file-name" name="hidden-input"></span>
+  }
+
+}
+
+@if(type == "password"){
+  <div class="password-checkbox">
+    <br><input type="checkbox" id="check-password-show" (click)="togglePassword()" /><app-inspectia-text
+      class="check-label" [labelLink]="true" typeText="label" labelFor="check-password-show"
+      text="Mostrar contraseña"></app-inspectia-text>
+  </div>
+}

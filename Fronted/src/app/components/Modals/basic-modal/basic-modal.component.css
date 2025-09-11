@@ -1,0 +1,98 @@
+
+
+:host{
+  position: absolute;
+  z-index: 2;
+  display: contents;
+  box-sizing: border-box;
+  width: max-content;
+  height: max-content;
+}
+
+.back{
+  position: absolute;
+  background-color: var(--inspectia-neutral-color-gray-60-25);
+  z-index: 2;
+  overflow: hidden;
+  --chain-border-color: none;
+  width: 100%;
+  height: 100%;
+}
+
+.back.open{
+  width: 100%;
+  height: 100%;
+}
+
+.back.close{
+  width: 0;
+  height: 0;
+}
+
+.modal-container{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--inspectia-neutral-color-white);
+  width: 360px;
+  height: max-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1.2rem;
+  padding: 1.7rem 1.7rem;
+}
+
+
+.info-zone, .icon-zone{
+  display: grid;
+  place-content: center;
+  width: 100%;
+}
+
+.info-zone{
+  text-align: center;
+  height: 53%;
+  align-content: start;
+  margin-bottom: 1rem;
+}
+
+.info-zone *{
+  margin: 0.3rem 0 0.4rem 0 !important;
+}
+
+.icon-zone{
+  height: 30%;
+}
+
+.button-zone{
+  height: 15%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.title-modal{
+  --chain-font-weight: 500;
+}
+
+.delete{
+  --color-button-background: var(--inspectia-semantic-error);
+}
+
+.warning{
+  --color-button-background: var(--inspectia-semantic-warning);
+}
+
+:host[typeModal = "error"] .principalButton{
+  --color-minimalist-hover: var(--inspectia-semantic-error);
+}
+
+:host[typeModal = "delete"] .principalButton{
+  --color-minimalist-hover: var(--inspectia-semantic-error);
+}
+
+:host[typeModal = "warning"] .principalButton{
+  --color-minimalist-hover: var(--inspectia-semantic-warning);
+
+}
+

@@ -1,0 +1,5 @@
+@if(value.trim() != ""){
+  <app-inspectia-text text="{{value}}" size="S" typeText="label" [chain]="true"></app-inspectia-text>
+}@else {
+  <ng-content></ng-content>
+}

@@ -1,0 +1,16 @@
+:host{
+  width: max-content;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  --size: var(--size, "33.33%");
+
+
+}
+
+
+:host{
+  flex-basis: var(--size);
+
+}
+

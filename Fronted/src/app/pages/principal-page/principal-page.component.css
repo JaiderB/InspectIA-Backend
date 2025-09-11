@@ -1,0 +1,236 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: var(--inspectia-neutral-color-gray-97);
+  --inspectia-neutral-color-black: none;
+}
+
+.left-zone,
+.right-zone {
+  padding: 3rem;
+}
+
+.left-zone {
+  padding-right: 1rem;
+  flex-basis: 20%;
+}
+
+.right-zone {
+  padding-left: 1rem;
+  flex-basis: 80%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+section {
+  background-color: var(--inspectia-neutral-color-white);
+}
+
+.left-panel {
+  box-sizing: border-box;
+  background-color: var(--inspectia-neutral-color-white);
+  height: 100%;
+  border-radius: 0.5rem;
+  justify-content: start;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  margin: 0.5rem auto;
+  width: min-content;
+  display: flex;
+  align-items: center;
+}
+
+.upper-zone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  flex-basis: 9%;
+  background-color: var(--inspectia-neutral-color-white);
+  font-weight: 500;
+  --chain-font-weight: 500;
+}
+
+.lower-zone {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem;
+  flex-basis: 100%;
+  background-color: var(--inspectia-neutral-color-white);
+  overflow: hidden;
+  flex-grow: 0;
+}
+
+.lower-zone .title-content-table {
+  --width-subtitle: max-content;
+  --height-subtitle: max-content;
+  display: flex;
+  width: min-content;
+}
+
+.container-table {
+  overflow-y: scroll;
+}
+
+.lower-zone .description-content-table {
+  display: flex;
+  margin-top: 1rem !important;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-basis: 70%;
+}
+
+.button-add {
+  margin-top: 2%;
+  align-self: flex-end;
+  margin-bottom: 2%;
+}
+
+.left-panel section:not(:first-child) {
+  width: 100%;
+}
+
+.left-panel section:last-child {
+  position: static;
+  bottom: 0;
+}
+
+.upper-left-panel-zone {
+  width: 100%;
+}
+
+.bottomLogout {
+  margin-bottom: 0.8rem;
+}
+
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .back-i {
+  --row-background-color: var(--inspectia-neutral-color-trans-25);
+} */
+
+
+
+.icon-see,
+.icon-delete {
+  margin: auto 0.4rem;
+  cursor: pointer;
+}
+
+.icon-see {
+  fill: var(--inspectia-disabled-link-color);
+}
+
+.icon-see:hover .chain path {
+
+  --chain-border-color: var(--inspectia-active-link-color);
+  --chain-see-fill-color: var(--inspectia-active-link-color) !important;
+
+}
+
+.icon-delete:hover {
+  --chain-border-color: none;
+  --chain-back-fill-color: var(--inspectia-semantic-error);
+
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.table::-webkit-scrollbar {
+  width: 12px;
+}
+
+
+.table::-webkit-scrollbar-thumb {
+  background-color: var(--inspectia-active-link-color);
+  border-radius: 20px;
+  border: 3px solid white;
+}
+
+.graphic-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 30%;
+}
+
+.donut-chart {
+  margin-top: 1em;
+  width: 28vw;
+  height: 28vh;
+}
+
+.card {
+  z-index: 4;
+  background: var(--inspectia-loading-background);
+  border: var(--card-border);
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  position: absolute;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.custom-spinner {
+  height: min-content;
+}
+
+.table app-row-table:nth-child(even) {
+  --row-background-color: var(--inspectia-neutral-color-trans-25);
+}
+
+
+::ng-deep .progress-spinner .p-progress-spinner-circle {
+  animation: custom-spinner-animation 5s linear infinite;
+}
+
+@keyframes custom-spinner-animation {
+  0% {
+    stroke: var(--p-progressspinner-color-one);
+  }
+
+  25% {
+    stroke: var(--p-progressspinner-color-two);
+  }
+
+  50% {
+    stroke: var(--p-progressspinner-color-three);
+  }
+
+  75% {
+    stroke: var(--p-progressspinner-color-four);
+  }
+
+  100% {
+    stroke: var(--p-progressspinner-color-one);
+  }
+}
+
+app-analysis-icon {
+  --chain-back-fill-color: var(--inspectia-primary-shadow);
+}

@@ -1,0 +1,53 @@
+<article class="content">
+
+  <div class="content-margin">
+    <section name="header-login" class="header">
+
+      <app-inspectia-logo-container urlSource="assets/Images/inspectia-log.png"
+        contentType="logo"></app-inspectia-logo-container>
+        <br>
+
+      <app-inspectia-text class="input-form" text="Inicio de sesión" typeText="title" size="XL"></app-inspectia-text>
+      <app-inspectia-text class="input-form" text="Ingresa tu nombre de usuario y contraseña"
+        typeText="description"></app-inspectia-text>
+
+    </section>
+
+    <section name="form-login" class="form">
+
+      <form>
+        <app-inspectia-input-form placeholder="Ingresa aquí tu usuario" label="Nombre de usuario" [required]="true"
+          type="text" [(value)]="email"></app-inspectia-input-form>
+
+        <br>
+
+        <app-inspectia-input-form placeholder="Ingresa aquí tu contraseña" label="Contraseña" [required]="true"
+          type="password" [(value)]="password"></app-inspectia-input-form>
+
+        <br>
+
+        <app-inspectia-button buttonText="Ingresar" type="button" (onPress)="login()"></app-inspectia-button>
+      </form>
+
+    </section>
+
+    <section name="extra-options" class="options">
+      <div>
+        <app-inspectia-text text="¿Aún no tienes una cuenta? " fontStyle="black" /><app-inspectia-text text="Regístrate"
+          typeText="link" (click)="showRegister($event)" />
+      </div>
+      <div class="second-option">
+        <app-inspectia-text class="second-option" text="¿Has olvidado tu contraseña? "
+          fontStyle="black" /><app-inspectia-text class="second-option" text="Recupera tu cuenta" typeText="link"
+          (click)="showRestore($event)" />
+      </div>
+    </section>
+  </div>
+
+
+</article>
+<section class="image">
+</section>
+
+<app-basic-modal [typeModal]="typeModal" [opened]="showModal" (closedModal)="closeModal()"
+  [customMessageType]="currentMessageModal" [defaultMessages]="false"></app-basic-modal>

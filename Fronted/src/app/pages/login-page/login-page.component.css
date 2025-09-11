@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  height: 100%;
+}
+
+.content {
+  flex-basis: 35%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.content-margin {
+  height: min-content;
+  width: min-content;
+
+}
+
+.image {
+  flex-basis: 65%;
+  background: url('assets/Images/scott-graham-5fNmWej4tAA-unsplash.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.form {
+  margin: 2rem 0 1.75rem 0;
+}
+
+app-inspectia-logo-container {
+  width: 99%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form app-inspectia-input-form {
+  display: block;
+}
+
+.options {
+  width: 305px;
+}
+
+.options .second-option {
+  margin-top: 0.7rem;
+}

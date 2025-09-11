@@ -1,0 +1,19 @@
+:host{
+  --row-background-color: #ebebeb36;
+}
+
+
+div{
+  display: flex;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+}
+
+.row{
+  --chain-text-color:  var(--inspectia-neutral-color-black);
+  background-color: var(--row-background-color);
+}
+
+.header{
+  --chain-text-color: var(--inspectia-default-text-color);
+}

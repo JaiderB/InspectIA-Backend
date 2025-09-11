@@ -1,0 +1,67 @@
+:host{
+  --margin-left-icon-button: 0.5rem;
+  --height-button-icon : auto;
+  --width-button-icon:  318px;
+  --color-button-background: var(--inspectia-primary-33);
+  --color-minimalist-hover: var(--inspectia-semantic-success-39);
+  display: flex;
+  width: min-content;
+  height: min-content;
+}
+
+button{
+  padding: 0.45rem;
+  border-radius: 0.3rem;
+  background-color: var(--color-button-background);
+  border: none;
+  min-width: 100px;
+  width: 318px;
+  max-width: 320px;
+  outline-color: var(--inspectia-active-link-color);
+  color: var(--inspectia-neutral-color-white);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+:host[buttonType = "button-icon"]{
+  --chain-border-color: white;
+}
+
+:host button{
+  display: flex;
+  align-items: center;
+  height: var(--height-button-icon);
+  width: var(--width-button-icon);
+}
+
+:host[buttonType = "button-icon"] .icon-button {
+  margin-left: var(--margin-left-icon-button);
+  width: min-content;
+}
+
+:host[buttonStyle = "minimalist"] button{
+  background-color: transparent;
+  border: var(--inspectia-neutral-color-gray-60) 1px solid;
+  outline-color: var(--inspectia-active-link-color);
+  color: var(--inspectia-neutral-color-gray-60);
+  --chain-border-color: var(--inspectia-neutral-color-gray-60);
+}
+
+:host[buttonStyle = "minimalist"] button:hover{
+  border-color: var(--color-minimalist-hover);
+  outline-color: var(--color-minimalist-hover);
+  color: var(--color-minimalist-hover);
+  --chain-border-color: var(--color-minimalist-hover);
+}
+
+#text{
+  margin:auto;
+}
+
+
+:host[min-size] button{
+  --height-button-icon: 37px;
+  --width-button-icon:  135px;
+}
+

@@ -1,0 +1,97 @@
+
+:host{
+  margin: 0!important;
+}
+
+.title, .subtitle, .subtitle-min, .link-word{
+  font-weight: 400;
+}
+
+.title, .subtitle, .description, .subtitle-min, .link-word{
+  margin: 0;
+}
+
+.title-subtitle{
+  color: var(--inspectia-primary-46);
+  height: 100%;
+}
+
+
+.title{
+  width: 100%;
+}
+
+
+.subtitle{
+  width: var(--width-subtitle);
+  height: var(--height-subtitle);
+}
+
+.container-tt{
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.link, .label, .description{
+  color: var(--inspectia-default-text-color);
+}
+
+.link{
+  cursor: pointer;
+}
+
+.link:hover{
+  color: var(--inspectia-active-link-color);
+}
+
+.label{
+  margin:0;
+  font-weight: 400;
+}
+
+.label-link:hover{
+  color: var(--inspectia-active-link-color);
+}
+
+
+
+/* Sizes*/
+
+.XS{
+  font-size: 0.813rem;
+}
+
+.S{
+  font-size: 1rem;
+}
+
+.M{
+  font-size: 1.25rem;
+}
+
+.L{
+  font-size: 1.5rem;
+}
+
+.XL{
+  font-size: 1.75rem;
+}
+
+.XXL{
+  font-size: 2rem;
+}
+
+
+/*Font styles*/
+
+.black{
+  color: var(--inspectia-neutral-color-black);
+}
+
+.chain{
+  font-weight: var(--chain-font-weight);
+  color: var(--chain-text-color);
+  cursor: var(--chain-cursor);
+}

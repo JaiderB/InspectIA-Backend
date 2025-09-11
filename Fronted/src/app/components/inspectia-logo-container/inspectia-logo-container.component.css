@@ -1,0 +1,24 @@
+:host {
+  display: flow-root;
+  width: min-content;
+}
+
+div {
+  width: min-content;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  justify-content: center;
+}
+
+svg {
+
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  width: 9rem;
+  height: 5rem;
+}
+

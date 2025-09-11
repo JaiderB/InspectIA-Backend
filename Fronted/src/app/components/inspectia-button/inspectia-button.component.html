@@ -1,0 +1,17 @@
+<!--
+<button [type]="buttonTypeForm" [attr.form]="form" (click)="onPressEvent($event)" class="{{classesButton}}">
+  @if(buttonType == "button-icon"){
+    <div class="icon-button">
+      <ng-content></ng-content>
+    </div>
+  }
+  <span id="text">{{buttonText}}</span>
+</button> -->
+<button [type]="type" [attr.form]="form" (click)="onPressEvent($event)" class="{{classesButton}}">
+  @if(buttonType == "button-icon"){
+    <div class="icon-button">
+      <ng-content></ng-content>
+    </div>
+  }
+  <span id="text">{{buttonText}}</span>
+</button>

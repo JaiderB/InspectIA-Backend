@@ -1,0 +1,46 @@
+:host:hover{
+  --chain-text-color: var(--inspectia-active-secondary-color);
+  --chain-border-color: var(--inspectia-active-secondary-color);
+  --chain-cursor: pointer;
+}
+
+:host:hover .back-hover{
+  background-color: var(--inspectia-secondary-trans-15);
+  border-right: 2px solid var(--inspectia-active-secondary-color);
+}
+
+:host:hover .back-hover.red{
+  background-color: var(--inspectia-semantic-error-trans-15);
+  border-right: 2px solid var(--inspectia-semantic-error);
+  --chain-text-color: var(--inspectia-semantic-error);
+  --chain-border-color: var(--inspectia-semantic-error);
+}
+
+:host:hover .red{
+  --chain-text-color: var(--inspectia-semantic-error);
+  --chain-border-color: var(--inspectia-semantic-error);
+}
+
+
+:host{
+  display: flex;
+  width: 100%;
+  --chain-text-color: var(--inspectia-primary-shadow);
+  --chain-border-color: var(--inspectia-primary-shadow);
+}
+
+div{
+  cursor: pointer;
+  padding: 0.75rem 0rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  border-right: 2px solid transparent;
+}
+
+
+.text{
+  margin-top: 0.1rem!important;
+  margin-left: 0.65rem!important;
+}
