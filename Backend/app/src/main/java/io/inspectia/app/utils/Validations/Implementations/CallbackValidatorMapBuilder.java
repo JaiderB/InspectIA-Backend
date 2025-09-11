@@ -18,10 +18,11 @@ public class CallbackValidatorMapBuilder <T, V> implements FirebaseMapBuilder<T,
     private ValidatorCallback validatorCallback;
 
     private V userUpdated;
-    private final Map<T, BiFunction<T, V, V>> actions = new HashMap<>();
+    private Map<T, BiFunction<T, V, V>> actions = new HashMap<>();
 
     @Override
     public CallbackValidatorMapBuilder<T,V> init(V initialMap, ValidatorCallback validatorCallback) {
+        this.actions = new HashMap<>();
         this.userUpdated = initialMap;
         this.validatorCallback = validatorCallback;
         return this;

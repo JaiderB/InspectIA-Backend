@@ -1,5 +1,7 @@
 package io.inspectia.app.model.infra.POJO.Enums.AI;
 
+import com.google.cloud.firestore.FieldValue;
+import com.google.cloud.firestore.annotation.ServerTimestamp;
 import io.inspectia.app.model.infra.DTO.Entities.Analysis;
 import io.inspectia.app.model.infra.DTO.Entities.AnalysisFile;
 import io.inspectia.app.model.infra.DTO.Entities.Defect;
@@ -13,30 +15,17 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.time.ZoneId;
+import java.util.*;
 
-/**
- * Servicio de simulación para generar análisis de IA sin llamar a un modelo real.
- */
+
 @Component("mockAiAnalysisGenerator")
 public class MockAiAnalysisGenerator {
 
     private static final Random random = new Random();
 
-    /**
-     * Genera un objeto de Análisis simulado basado en una lista de archivos.
-     *
-     * @param files Lista de archivos MultipartFile a analizar.
-     * @return Un objeto Analysis completamente poblado con datos simulados.
-     * @throws IOException Si ocurre un error al leer los archivos.
-     */
     public static Analysis generateAnalysis(List<MultipartFile> files) throws IOException {
         Analysis analysis = new Analysis();
-        analysis.setValidationDate(Instant.now().toString());
         int maxDefects = 40;
         int minDefects = 1;
 

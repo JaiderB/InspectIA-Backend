@@ -150,7 +150,6 @@ public class AuthService {
         String jwtRefreshToken = jwtService.generateRefreshToken(user);
         saveUserToken(user, jwtRefreshToken, TokenType.REFRESH_TOKEN);
         return new TokenResponse(jwtToken, jwtRefreshToken);
-
     }
 
 }

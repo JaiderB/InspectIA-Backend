@@ -1,19 +1,16 @@
 package io.inspectia.app.controller.User;
 
 import io.inspectia.app.model.Domain.DTO.Entities.UserResponse;
-import io.inspectia.app.model.Mapper.UserResponseMapper;
+import io.inspectia.app.model.Mapper.UserMapper;
 import io.inspectia.app.model.infra.DTO.Entities.User;
 import io.inspectia.app.service.Auth.UserService;
 import lombok.AllArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.net.http.HttpResponse;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
@@ -31,7 +28,7 @@ public class UserController {
             Optional<User> userDB = userService.getByDocument(userId);
 
             if(userDB.isPresent()){
-                UserResponse userResponse = UserResponseMapper.fromUser(userDB.get());
+                UserResponse userResponse = UserMapper.fromUser(userDB.get());
 
                 return ResponseEntity.ok(userResponse);
             }else{
