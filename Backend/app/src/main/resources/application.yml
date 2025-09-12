@@ -1,9 +1,6 @@
 security.basic.enable: false
 security.ignored: /**
 security.enable-csrf: false
-logging:
-  level:
-    org.springframework.security.web: DEBUG
 
 spring:
   servlet:
@@ -22,17 +19,12 @@ spring:
     chat:
       client:
         enabled: false
-#        embedding:
-#          enabled: false
-#    chat:
-#      options:
-#        model: gpt
+
 
 application:
   name: Inspectia
   security:
     jwt:
-
       secret-key: ${JWT_SECRET_KEY}
       expiration: ${JWT_TOKEN_EXPIRATION}
       refresh-token:

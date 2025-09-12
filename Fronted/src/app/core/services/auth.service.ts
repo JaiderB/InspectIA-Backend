@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Inject, Injectable } from '@angular/core';
-import { environment } from '@env/environment';
+import { environment } from '@env/enviromnet.prod';
 import { LoginRequest } from '@models/Auth/login-request.model';
 import { RegisterRequest } from '@models/Auth/register-request.model';
 import { TokenResponse } from '@models/Auth/token-response.models';
