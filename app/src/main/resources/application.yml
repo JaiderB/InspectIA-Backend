@@ -1,0 +1,37 @@
+security.basic.enable: false
+security.ignored: /**
+security.enable-csrf: false
+logging.level.org.springframework.web: DEBUG
+
+spring:
+  servlet:
+  multipart:
+    max-file-size: 10MB
+    max-request-size: 10MB
+  application:
+    name: app
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: deepseek-r1:1.5b
+          temperature: 0.0
+    chat:
+      client:
+        enabled: false
+
+
+application:
+  name: Inspectia
+  security:
+    jwt:
+      secret-key: ${JWT_SECRET_KEY}
+      expiration: ${JWT_TOKEN_EXPIRATION}
+      refresh-token:
+        expiration: ${JWT_REFRESH_TOKEN_EXPIRATION}
+firebase:
+  database:
+    service-account-path: ${FIREBASE_SERVICE_ACCOUNT_KEY}
+    name: Inspectia-Db
+    region: us-central1
