@@ -17,17 +17,12 @@ public class WebConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        // Configura los orígenes permitidos (tu frontend)
-        configuration.setAllowedOrigins(List.of("http://localhost:4200"));
-        // Configura los métodos permitidos, incluyendo OPTIONS
+        configuration.setAllowedOrigins(List.of("https://inspect-ia-front.vercel.app"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        // Permite todas las cabeceras
         configuration.setAllowedHeaders(List.of("*"));
-        // Permite el envío de credenciales (cookies, headers de autorización)
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        // Aplica esta configuración a todas las rutas
         source.registerCorsConfiguration("/**", configuration);
 
         return source;

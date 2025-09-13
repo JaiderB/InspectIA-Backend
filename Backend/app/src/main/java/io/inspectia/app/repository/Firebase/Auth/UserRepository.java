@@ -99,8 +99,8 @@ public class UserRepository {
         List<User> user = null;
 
         for (Map.Entry<String, Object>filter : filterMap.entrySet()){
-            Query query = firestoreDatabase.collection(COLLECTION_NAME);
-            query.whereEqualTo(filter.getKey(), filter.getValue());
+            Query query = firestoreDatabase.collection(COLLECTION_NAME).
+                    whereEqualTo(filter.getKey(), filter.getValue());
             QuerySnapshot querySnapshot = query.get().get();
 
             if(!querySnapshot.isEmpty()){
@@ -121,7 +121,7 @@ public class UserRepository {
         Query query = firestoreDatabase.collection(COLLECTION_NAME);
 
         for (Map.Entry<String, Object>filter : filterMap.entrySet()){
-            query.whereEqualTo(filter.getKey(), filter.getValue());
+            query = query.whereEqualTo(filter.getKey(), filter.getValue());
         }
 
         return Optional.of(query.get().get().toObjects(User.class));

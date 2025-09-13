@@ -1,6 +1,7 @@
 security.basic.enable: false
 security.ignored: /**
 security.enable-csrf: false
+logging.level.org.springframework.web: DEBUG
 
 spring:
   servlet:

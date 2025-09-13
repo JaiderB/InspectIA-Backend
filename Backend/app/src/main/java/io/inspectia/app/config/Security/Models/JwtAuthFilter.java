@@ -25,7 +25,7 @@ import java.io.IOException;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
-@Component
+@Component("jwtAuthFilter")
 @AllArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
 
